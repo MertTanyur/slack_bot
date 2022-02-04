@@ -2,7 +2,7 @@
 FROM python:3.9
 
 # 
-# WORKDIR /code
+WORKDIR /code
 RUN pip install fastapi uvicorn
 # 
 COPY ./requirements.txt /code/requirements.txt
