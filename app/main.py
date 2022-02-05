@@ -108,17 +108,17 @@ conversation_id = None
 @app.get('messages')
 def list_messages():
     try:
-    print('hello world')
-    # Call the conversations.list method using the WebClient
-    for response in client.conversations_list():
-        if conversation_id is not None:
-            break
-        for channel in result["channels"]:
-            if channel["name"] == channel_name:
-                conversation_id = channel["id"]
-                # Print result
-                print(f"Found conversation ID: {conversation_id}")
+        print('hello world')
+        # Call the conversations.list method using the WebClient
+        for response in client.conversations_list():
+            if conversation_id is not None:
                 break
+            for channel in result["channels"]:
+                if channel["name"] == channel_name:
+                    conversation_id = channel["id"]
+                    # Print result
+                    print(f"Found conversation ID: {conversation_id}")
+                    break
 
     except SlackApiError as e:
-    print(f"Error: {e}")
+        print(f"Error: {e}")
