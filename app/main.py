@@ -131,7 +131,7 @@ def list_messages():
 def send_message():
     try:
         response = client.chat_postMessage(
-            channel="genel",
+            channel="C0325U9F3S5",
             text="Merhabalar ben sammy!"
         )
     except SlackApiError as e:
