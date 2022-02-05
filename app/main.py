@@ -105,8 +105,9 @@ channel_name = "genel"
 conversation_id = None
 
 
-@app.get('messages')
+@app.get('/messages')
 def list_messages():
+    response = {'conversation_id_list': []}
     try:
         print('hello world')
         # Call the conversations.list method using the WebClient
@@ -118,7 +119,9 @@ def list_messages():
                     conversation_id = channel["id"]
                     # Print result
                     print(f"Found conversation ID: {conversation_id}")
+                    response['conversation_id_list'].append(conversation_id)
                     break
-
+        return response
     except SlackApiError as e:
         print(f"Error: {e}")
+        return {'Error message': e}
