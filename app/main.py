@@ -96,7 +96,7 @@ async def update_item(
 # WebClient instantiates a client that can call API methods
 # When using Bolt, you can use either `app.client` or the `client` passed to listeners.
 client = WebClient(token=os.environ.get(
-    "xoxb-2992220446947-3043543216550-5c0qeOgYfydqaV7Gw1drckpp"))
+    "xoxb-2992220446947-3043543216550-UH4TgUObFkg0dQcSUe6joSDc"))
 logger = logging.getLogger(__name__)
 channel_name = "genel"
 conversation_id = None
